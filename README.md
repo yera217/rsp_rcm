@@ -4,6 +4,8 @@ It implements RCM of UR5 robot based on constrained optimization approach.
 ### Members: Yernar Zhetpissov (JHED id: yzhetpi1)
 
 
+![RCMformulation](./media/RCMformulation.png)
+
 ### Installation instructions:
 Dependencies:
 * pyOpt [http://www.pyopt.org/install.html]. If having numpy compatibility error "TypeError: only integer scalar arrays can be converted to a scalar index"m replace lz with lz[0] `/usr/local/lib/python2.7/dist-packages/pyOpt/pySLSQP/pySLSQP.py` in
@@ -19,7 +21,7 @@ Lines
 * gfortran (or other fotran compiler)
 `sudo apt-get install gfortran`
 
-* pyKDL and packages used in the course assignments (Ocoros RTT, KDL, UR5, ros_control, kdl_typekit) 
+* packages used in the course assignments (fmauch_universal_robot, Universal_Robots_ROS_Driver, Universal_Robots_Client_Library, ocoros, ros_control, rtt_ros_integration, kdl_typekit) 
 
 ### Simulation running instruction:
 ```
