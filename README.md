@@ -50,4 +50,4 @@ There is no demo video with real UR5 yet, but here there is demo of the simulati
 [![Demo of vRCM](https://img.https://www.youtube.com/watch?v=n_97qhFkzqA/0.jpg)](https://www.youtube.com/watch?v=n_97qhFkzqA)
 
 There is also a video of the simulation in AMBF environment with same RCM logic with active tool:
-[![Demo of vRCM](https://img.https://www.youtube.com/watch?v=sJOVtvhsAN0/0.jpg)](https://www.youtube.com/watch?v=sJOVtvhsAN0)
+[![Demo of vRCM in AMBF](https://img.https://www.youtube.com/watch?v=sJOVtvhsAN0/0.jpg)](https://www.youtube.com/watch?v=sJOVtvhsAN0)
