@@ -22,9 +22,11 @@ Lines
 * Ocoros RTT and UR5 packages used in the course assignemtns (are included here also)
 
 ### Simulation running instruction:
-`catkin build tool_description ur5_tool_description ur5_rcm_msgs ur5_tool_gazebo ur5_rcm_srvcli`
-`source devel/setup.bash`
-`roslaunch ur5_rcm_srvcli ur5_rcm.launch`
+```
+catkin build tool_description ur5_tool_description ur5_rcm_msgs ur5_tool_gazebo ur5_rcm_srvcli
+source devel/setup.bash
+roslaunch ur5_rcm_srvcli ur5_rcm.launch
+```
 It will launch deployer, Gazebo window with the robot. It should directly go to the definec desired tool position respecting defined RCM.
 
 
