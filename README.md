@@ -4,7 +4,7 @@ It implements RCM of UR5 robot based on constrained optimization approach.
 ### Members: Yernar Zhetpissov (JHED id: yzhetpi1)
 
 
-![RCMformulation](https://github.com/yera217/rsp_rcm/blob/main/RCMformulation.png?raw=true)
+![RCMformulation](https://github.com/yera217/rsp_rcm/tree/main/media/RCMformulation.png?raw=true)
 
 ### Installation instructions:
 Dependencies:
