@@ -45,6 +45,9 @@ It will launch deployer, Gazebo window with the robot, Rviz and dynamic reconfig
 *  ur5_tool_gazebo - package for gazebo configuration of the UR5 + tool
 *  ur5_rcm_srvcli - MAIN package which implements RCM optimization server, RTT deployer logic, constructs KDL chain from robot_description, controller config files
 
-There is no demo video with real UR5 yet, but there is a video of the simulation in AMBF environment with same RCM logic:
+### Deliverables
+There is no demo video with real UR5 yet, but here there is demo of the simulation:
+[![Demo of vRCM](https://img.https://www.youtube.com/watch?v=n_97qhFkzqA/0.jpg)](https://www.youtube.com/watch?v=n_97qhFkzqA)
 
+There is also a video of the simulation in AMBF environment with same RCM logic with active tool:
 [![Demo of vRCM](https://img.youtube.com/vi/sJOVtvhsAN0/0.jpg)](https://www.youtube.com/watch?v=sJOVtvhsAN0)
