@@ -1,0 +1,11 @@
+                                                                   
+<launch>
+
+   <!-- <node name="dynamic_reconfigure_load" pkg="dynamic_reconfigure" type="dynparam" args="load /assignment10 $(find \
+assignment10)/config/default.yaml" /> -->
+
+  <node pkg="rqt_reconfigure"
+        type="rqt_reconfigure"
+        name="rqt_reconfigure"/>
+
+</launch>

@@ -114,6 +114,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        world:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         wrist_1_link:
           Alpha: 1
           Show Axes: false
@@ -162,6 +166,8 @@ Visualization Manager:
           Value: true
         upper_arm_link:
           Value: true
+        world:
+          Value: true
         wrist_1_link:
           Value: true
         wrist_2_link:
@@ -174,22 +180,23 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        base_link:
-          base:
-            {}
-          base_link_inertia:
-            shoulder_link:
-              upper_arm_link:
-                forearm_link:
-                  wrist_1_link:
-                    wrist_2_link:
-                      wrist_3_link:
-                        flange:
-                          tool0:
-                            needle_driver_base:
-                              needle_driver_shaft:
-                                needle_driver_tip:
-                                  {}
+        world:
+          base_link:
+            base:
+              {}
+            base_link_inertia:
+              shoulder_link:
+                upper_arm_link:
+                  forearm_link:
+                    wrist_1_link:
+                      wrist_2_link:
+                        wrist_3_link:
+                          flange:
+                            tool0:
+                              needle_driver_base:
+                                needle_driver_shaft:
+                                  needle_driver_tip:
+                                    {}
       Update Interval: 0
       Value: true
   Enabled: true
@@ -220,25 +227,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.327837347984314
+      Distance: 1.2529901266098022
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.2777835428714752
-        Y: -0.02538980543613434
-        Z: -0.11577603220939636
+        X: 0.2314685732126236
+        Y: 0.04540807753801346
+        Z: -0.0978151485323906
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.43539828062057495
+      Pitch: 0.4103982746601105
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.4803982973098755
+      Yaw: 0.4053983688354492
     Saved: ~
 Window Geometry:
   "&Displays":

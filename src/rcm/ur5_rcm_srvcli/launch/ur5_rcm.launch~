@@ -8,7 +8,7 @@
    <include file="$(find ur5_tool_gazebo)/launch/ur5_gazebo.launch">
    </include>
 
-   <include file="$(find ur5_rcm_srvcli)/launch/dyn_reconf.launch">
+   <include file="$(find ur5_rcm_srvcli)/launch/dyb_reconf.launch">
    </include>
 
 

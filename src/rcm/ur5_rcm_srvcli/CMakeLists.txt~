@@ -12,6 +12,8 @@ find_package(catkin REQUIRED COMPONENTS
   kdl_typekit
   roscpp
   rospy
+  rosservice
+  rosparam
   rqt_controller_manager
   rtt_sensor_msgs
   rtt_ros
@@ -24,6 +26,11 @@ find_package(catkin REQUIRED COMPONENTS
   joint_state_controller
   gazebo_ros_control
   ur5_rcm_msgs
+  ur_description
+  ur_gazebo
+  rtt_dynamic_reconfigure
+  ur5_tool_description
+  ur5_tool_gazebo
 )
 
 ## System dependencies are found with CMake's conventions
@@ -101,10 +108,9 @@ find_package(catkin REQUIRED COMPONENTS
 ##     and list every .cfg file to be processed
 
 ## Generate dynamic reconfigure parameters in the 'cfg' folder
-# generate_dynamic_reconfigure_options(
-#   cfg/DynReconf1.cfg
-#   cfg/DynReconf2.cfg
-# )
+ generate_dynamic_reconfigure_options(
+   cfg/rcm.cfg
+ )
 
 ###################################
 ## catkin specific configuration ##
@@ -116,7 +122,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
+  INCLUDE_DIRS include
 #  LIBRARIES ur5_rcm_srvcli
 #  CATKIN_DEPENDS rospy ur5_rcm_msgs
 #  DEPENDS system_lib
@@ -133,12 +139,12 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-orocos_component( rtt_rcm src/rtt_rcm.cpp  )
+orocos_component( rtt_rcm_srvcli src/rtt_rcm_depl.cpp  )
 
 ## Declare a C++ library
- add_library(rtt_rcm_srvcli
-   src/rtt_rcm.cpp
- )
+# add_library(rtt_rcm_srvcli
+#   src/rtt_rcm.cpp
+# )
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -148,7 +154,11 @@ orocos_component( rtt_rcm src/rtt_rcm.cpp  )
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
- add_executable(rtt_rcm_cli src/rtt_rcm_node.cpp)
+
+
+# add_executable(rtt_rcm_cli src/rtt_rcm_node.cpp)
+
+
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -161,14 +171,15 @@ orocos_component( rtt_rcm src/rtt_rcm.cpp  )
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
- target_link_libraries(rtt_rcm_cli
-   rtt_rcm_srvcli
-   ${catkin_LIBRARIES}
-   )
-
-  target_link_libraries(rtt_rcm
+ target_link_libraries(rtt_rcm_srvcli
    ${catkin_LIBRARIES}
  )
+
+
+#target_link_libraries(rtt_rcm_cli
+#  rtt_rcm_srvcli
+#   ${catkin_LIBRARIES}
+#   )
 
 
 #############

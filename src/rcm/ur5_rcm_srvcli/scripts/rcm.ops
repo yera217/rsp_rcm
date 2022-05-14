@@ -7,9 +7,37 @@ import("rtt_rospack")
 import("rtt_sensor_msgs")
 import("kdl_typekit")
 import("ur5_rcm_srvcli")
+import("rtt_dynamic_reconfigure")
+
 
 loadComponent("ur5", "rtt_rcm_depl")
 setActivity("ur5", 0.01, 0, ORO_SCHED_OTHER)
+
+loadService("ur5", "reconfigure")
+ur5.reconfigure.min.x_des=-0.7
+ur5.reconfigure.max.x_des=0.7
+ur5.reconfigure.default.x_des=-0.3
+ur5.reconfigure.min.y_des=-0.7
+ur5.reconfigure.max.y_des=0.7
+ur5.reconfigure.default.y_des=-0.3
+ur5.reconfigure.min.z_des=0.0
+ur5.reconfigure.max.z_des=0.7
+ur5.reconfigure.default.z_des=0.25
+
+ur5.reconfigure.min.x_RCM=-0.7
+ur5.reconfigure.max.x_RCM=0.7
+ur5.reconfigure.default.x_RCM=-0.25
+ur5.reconfigure.min.y_RCM=-0.7
+ur5.reconfigure.max.y_RCM=0.7
+ur5.reconfigure.default.y_RCM=-0.25
+ur5.reconfigure.min.z_RCM=0.0
+ur5.reconfigure.max.z_RCM=0.7
+ur5.reconfigure.default.z_RCM=0.3
+
+
+ur5.reconfigure.advertise("ur5")
+
+
 
 stream( "ur5.JntStates",ros.topic("/joint_states"))
 stream( "ur5.CmdVels",ros.topic("/joint_group_velocity_controller/command"))

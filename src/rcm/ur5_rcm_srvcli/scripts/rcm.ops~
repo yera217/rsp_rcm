@@ -1,18 +1,48 @@
 import("rtt_ros")
 import("rtt_rosnode")
-import("rtt_roscomm")
-import("rtt_sensor_msgs")
 import("rtt_std_msgs")
+import("rtt_roscomm")
+import("rtt_rosparam")
+import("rtt_rospack")
+import("rtt_sensor_msgs")
 import("kdl_typekit")
 import("ur5_rcm_srvcli")
-
-loadComponent("robot", "rtt_rcm")
-setActivity("robot", 0.01, 0, ORO_SCHED_OTHER)
-
-stream( "robot.JntStates",ros.topic("/iiwa/joint_states"))
-stream( "robot.CmdWrenches",ros.topic("/joint_state_controller/command"))
+import("rtt_dynamic_reconfigure")
 
 
+loadComponent("ur5", "rtt_rcm_depl")
+setActivity("ur5", 0.01, 0, ORO_SCHED_OTHER)
 
-robot.configure()
-robot.start()
+loadService("ur5", "reconfigure")
+ur5.reconfigure.min.x_des=-0.7
+ur5.reconfigure.max.x_des=0.7
+ur5.reconfigure.default.x_des=-0.3
+ur5.reconfigure.min.y_des=-0.7
+ur5.reconfigure.max.y_des=0.7
+ur5.reconfigure.default.y_des=-0.3
+ur5.reconfigure.min.z_des=0.0
+ur5.reconfigure.max.z_des=0.7
+ur5.reconfigure.default.z_des=0.25
+
+ur5.reconfigure.min.x_des=-0.7
+ur5.reconfigure.max.x_des=0.7
+ur5.reconfigure.default.x_des=-0.25
+ur5.reconfigure.min.y_des=-0.7
+ur5.reconfigure.max.y_des=0.7
+ur5.reconfigure.default.y_des=-0.25
+ur5.reconfigure.min.z_des=0.0
+ur5.reconfigure.max.z_RCM=0.7
+ur5.reconfigure.default.z_RCM=0.3
+
+
+ur5.reconfigure.advertise("ur5")
+
+
+
+stream( "ur5.JntStates",ros.topic("/joint_states"))
+stream( "ur5.CmdVels",ros.topic("/joint_group_velocity_controller/command"))
+
+
+
+ur5.configure()
+ur5.start()

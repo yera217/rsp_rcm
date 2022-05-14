@@ -67,6 +67,11 @@
   <build_depend>ur5_rcm_msgs</build_depend>
   <build_depend>ur_gazebo</build_depend>
   <build_depend>ur_description</build_depend>
+  <build_depend>rtt_dynamic_reconfigure</build_depend>
+  <build_depend>rosservice</build_depend>
+  <build_depend>rosparam</build_depend>
+  <build_depend>ur5_tool_description</build_depend>
+  <build_depend>ur5_tool_gazebo</build_depend>
 
   <build_export_depend>kdl_parser</build_export_depend>
   <build_export_depend>kdl_typekit</build_export_depend>
@@ -86,6 +91,11 @@
   <build_export_depend>ur5_rcm_msgs</build_export_depend>
   <build_export_depend>ur_gazebo</build_export_depend>
   <build_export_depend>ur_description</build_export_depend>
+  <build_export_depend>rtt_dynamic_reconfigure</build_export_depend>
+  <build_export_depend>rosservice</build_export_depend>
+  <build_export_depend>rosparam</build_export_depend>
+  <build_export_depend>ur5_tool_description</build_export_depend>
+  <build_export_depend>ur5_tool_gazebo</build_export_depend>
 
   <exec_depend>kdl_parser</exec_depend>
   <exec_depend>kdl_typekit</exec_depend>
@@ -105,6 +115,11 @@
   <exec_depend>ur5_rcm_msgs</exec_depend>
   <exec_depend>ur_gazebo</exec_depend>
   <exec_depend>ur_description</exec_depend>
+  <exec_depend>rtt_dynamic_reconfigure</exec_depend>
+  <exec_depend>rosservice</exec_depend>
+  <exec_depend>rosparam</exec_depend>
+  <exec_depend>ur5_tool_description</exec_depend>
+  <exec_depend>ur5_tool_gazebo</exec_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->

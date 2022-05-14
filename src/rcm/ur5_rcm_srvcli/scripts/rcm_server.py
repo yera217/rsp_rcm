@@ -20,13 +20,16 @@ def handle_opt_rcm(req):
 	### Retreiving data from srv message
 	x_curr=req.fk.data[0:3]
 	xyz_cl=req.fk.data[3:6]
+	xyz_RCM=req.fk.data[6:9]
+	x_des=req.fk.data[9:12]
+	
+	x_curr=np.array(x_curr)
+	xyz_cl=np.array(xyz_cl)
+	xyz_RCM=np.array(xyz_RCM)
+	x_des=np.array(x_des)
 
 	jac_tip_flattened=req.jac_tip.data
 	jac_cl_flattened=req.jac_cl.data
-	# height_Jtip=req.jac_tip.layout.dim[0]
-	# width_Jtip=req.jac_tip.layout.dim[1]
-	# height_Jcl=req.jac_cl.layout.dim[0]
-	# width_Jcl=req.jac_cl.layout.dim[1]
 	J_tip=np.zeros((3,6))
 	J_cl=np.zeros((3,6))
 	
@@ -38,10 +41,6 @@ def handle_opt_rcm(req):
 		for j in range(6):
 			J_cl[i,j]=jac_cl_flattened[i*6+j]
 
-	xyz_RCM = np.array( [-0.25, -0.25, 0.3] )
-	x_des = np.array( [-0.3, -0.3, 0.25] )
-	# xyz_RCM = np.array( [0.6155, 0.2103, 0.162] )
-	# x_des = np.array( [0.6155, 0.2103, 0.162] )
 	print("****************")
 	print("xyz_tip: ", x_curr)
 	print("xyz_cl ", xyz_cl)

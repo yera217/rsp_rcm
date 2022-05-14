@@ -7,7 +7,9 @@ rtt_rcm_depl::rtt_rcm_depl (const std::string& name) :
   nh(nh),fk_frame_solver(NULL),J_tip_solver(NULL),
   fk_frame_cl_solver(NULL),J_cl_solver(NULL),
   port_jnt_state("Input Joint states"),
-  port_cmd_vel("Command joint velocities"){
+  port_cmd_vel("Command joint velocities"),
+  x_des(-0.3),y_des(-0.3),z_des(0.25),
+  x_RCM(-0.25),y_RCM(-0.25),z_RCM(0.3){
   
   std::cout << "rtt_rcm::rtt_rcm"  << std::endl;
 
@@ -17,6 +19,13 @@ rtt_rcm_depl::rtt_rcm_depl (const std::string& name) :
   addPort("CmdVels", port_cmd_vel).doc("Command velocities");
 
   addProperty("robot_description", robot_description_string);
+  addProperty("x_des", x_des);
+  addProperty("y_des", y_des);
+  addProperty("z_des", z_des);
+  addProperty("x_RCM", x_RCM);
+  addProperty("y_RCM", y_RCM);
+  addProperty("z_RCM", z_RCM);
+
 }
 
 
@@ -57,7 +66,8 @@ bool rtt_rcm_depl::configureHook(){
 
 void rtt_rcm_depl::updateHook(){
 	// std::cout << "rtt_rcm::UpdateHook" << std::endl;
-	
+	xyz_RCM[0]=x_RCM; xyz_RCM[1]=y_RCM; xyz_RCM[2]=z_RCM;
+  xyz_des[0]=x_des; xyz_des[1]=y_des; xyz_des[2]=z_des;
 
 	////////// Reading data from input port and converting to KDL type /////////
   sensor_msgs::JointState js;
@@ -118,17 +128,17 @@ void rtt_rcm_depl::updateHook(){
 
 
 
-    double lamda = dot_prod( subtract(xyz_RCM,xyz_tb), subtract(xyz_tt,xyz_tb)) / dot_prod( subtract(xyz_tt,xyz_tb), subtract(xyz_tt,xyz_tb));
+    double lamda = rtt_rcm_depl::dot_prod( rtt_rcm_depl::subtract(xyz_RCM,xyz_tb), rtt_rcm_depl::subtract(xyz_tt,xyz_tb)) / rtt_rcm_depl::dot_prod( rtt_rcm_depl::subtract(xyz_tt,xyz_tb), rtt_rcm_depl::subtract(xyz_tt,xyz_tb));
     // std::cout << "xyz_tb" << xyz_tb[0] << " " << xyz_tb[1] << " "<< xyz_tb[2] << " "<< std::endl;
     lamda = std::max(0.0, std::min(lamda,1.0));
 
     // Finding xyz coordinates of the point on the shaft closest to RCM
-    std::array<double,3> xyz_cl = add(xyz_tb, scale(lamda,subtract(xyz_tt,xyz_tb) ));
+    std::array<double,3> xyz_cl = rtt_rcm_depl::add(xyz_tb, rtt_rcm_depl::scale(lamda,rtt_rcm_depl::subtract(xyz_tt,xyz_tb) ));
 
 
 
     // Calculating Jacobian at the closest point
-    double dist_shaft_cl = norm(subtract(xyz_cl,xyz_tb));
+    double dist_shaft_cl = rtt_rcm_depl::norm(rtt_rcm_depl::subtract(xyz_cl,xyz_tb));
 
     chain_cl.addSegment(KDL::Segment( KDL::Joint(KDL::Joint::None), KDL::Frame(KDL::Vector(dist_shaft_cl,0,0))));
 
@@ -149,13 +159,13 @@ void rtt_rcm_depl::updateHook(){
 
 
     // Converting to srv format
-    std_msgs::Float64MultiArray fk,jac_tip,jac_cl;
+    std_msgs::Float64MultiArray fk, jac_tip, jac_cl;
     fk.layout.dim.push_back(std_msgs::MultiArrayDimension());
     jac_tip.layout.dim.push_back(std_msgs::MultiArrayDimension());
     jac_cl.layout.dim.push_back(std_msgs::MultiArrayDimension());
 
 
-    fk.layout.dim[0].size=6;
+    fk.layout.dim[0].size=12;
     for (int i=0; i<3; i++) {
       fk.data.push_back( x_curr[i] );
     }
@@ -164,6 +174,13 @@ void rtt_rcm_depl::updateHook(){
       fk.data.push_back( xyz_cl[i] );
     }
 
+    for (int i=0; i<3; i++) {
+      fk.data.push_back( xyz_RCM[i] );
+    }
+
+    for (int i=0; i<3; i++) {
+      fk.data.push_back( xyz_des[i] );
+    }
     
     jac_tip.layout.dim[0].size=size_Jtip;
     for (int i=0; i<size_Jtip; i++) {

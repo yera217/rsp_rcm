@@ -12,6 +12,8 @@ find_package(catkin REQUIRED COMPONENTS
   kdl_typekit
   roscpp
   rospy
+  rosservice
+  rosparam
   rqt_controller_manager
   rtt_sensor_msgs
   rtt_ros
@@ -26,6 +28,9 @@ find_package(catkin REQUIRED COMPONENTS
   ur5_rcm_msgs
   ur_description
   ur_gazebo
+  rtt_dynamic_reconfigure
+  ur5_tool_description
+  ur5_tool_gazebo
 )
 
 ## System dependencies are found with CMake's conventions
@@ -103,11 +108,7 @@ find_package(catkin REQUIRED COMPONENTS
 ##     and list every .cfg file to be processed
 
 ## Generate dynamic reconfigure parameters in the 'cfg' folder
-# generate_dynamic_reconfigure_options(
-#   cfg/DynReconf1.cfg
-#   cfg/DynReconf2.cfg
-# )
-
+ 
 ###################################
 ## catkin specific configuration ##
 ###################################
@@ -118,7 +119,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
+  INCLUDE_DIRS include
 #  LIBRARIES ur5_rcm_srvcli
 #  CATKIN_DEPENDS rospy ur5_rcm_msgs
 #  DEPENDS system_lib

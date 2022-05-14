@@ -22,11 +22,21 @@
 #include <math.h>
 
 
+
+
 class rtt_rcm_depl: public RTT::TaskContext {
 private:
 
-	 std::array<double,3> xyz_RCM =  {-0.25, -0.25, 0.3};
-	//std::array<double,3> xyz_RCM =  {0.6155, 0.2103, 0.162};
+	double x_des;
+	double y_des;
+	double z_des;
+
+	double x_RCM;
+	double y_RCM;
+	double z_RCM;
+
+	std::array<double,3> xyz_RCM;
+	std::array<double,3> xyz_des;
 
 	RTT::InputPort<sensor_msgs::JointState> port_jnt_state;                                                   
 	RTT::OutputPort<std_msgs::Float64MultiArray> port_cmd_vel;
@@ -59,43 +69,47 @@ public:
 	virtual void stopHook();
 
 	virtual void cleanupHook();
+
+	//function for dot product                                                                                  
+    double dot_prod(std::array<double,3> vector_a, std::array<double,3> vector_b) {
+        double prod = 0.0;
+        for (int i = 0; i < 3; i++)
+                prod += vector_a[i] * vector_b[i];
+        return prod;
+    }
+
+	//function for vector subtraction
+	std::array<double,3> subtract(std::array<double,3> vector_a, std::array<double,3> vector_b) {
+		std::array<double,3> res;
+		for (int i = 0; i < 3; i++)
+			res[i]=vector_a[i]-vector_b[i];
+		return res;
+	}
+	//function for vector addition
+	std::array<double,3>  add(std::array<double,3> vector_a, std::array<double,3> vector_b) {
+		std::array<double,3> res;
+		for (int i = 0; i < 3; i++)
+			res[i]=vector_a[i]+vector_b[i];
+		return res;
+	}
+	//function for vector scaling
+	std::array<double,3>  scale(double k, std::array<double,3> vector_b) {
+		std::array<double,3> res;
+		for (int i = 0; i < 3; i++)
+			res[i]=k*vector_b[i];
+		return res;
+	}
+	//function norm
+	double norm(std::array<double,3> vector_a) {
+		double running_sum=0;
+		for (int i = 0; i < 3; i++)
+			running_sum+=vector_a[i]*vector_a[i];
+		return sqrt(running_sum);
+	}
 };
 
 
-//helper funcs
-//function for dot product
-double dot_prod(std::array<double,3> vector_a, std::array<double,3> vector_b) {
-	double prod = 0.0;
-	for (int i = 0; i < 3; i++)
-		prod += vector_a[i] * vector_b[i];
-	return prod;
-}
 
-//function for vector subtraction
-std::array<double,3> subtract(std::array<double,3> vector_a, std::array<double,3> vector_b) {
-	std::array<double,3> res;
-	for (int i = 0; i < 3; i++)
-		res[i]=vector_a[i]-vector_b[i];
-	return res;
-}
-//function for vector addition
-std::array<double,3>  add(std::array<double,3> vector_a, std::array<double,3> vector_b) {
-	std::array<double,3> res;
-	for (int i = 0; i < 3; i++)
-		res[i]=vector_a[i]+vector_b[i];
-	return res;
-}
-//function for vector scaling
-std::array<double,3>  scale(double k, std::array<double,3> vector_b) {
-	std::array<double,3> res;
-	for (int i = 0; i < 3; i++)
-		res[i]=k*vector_b[i];
-	return res;
-}
-//function norm
-double norm(std::array<double,3> vector_a) {
-	double running_sum=0;
-	for (int i = 0; i < 3; i++)
-		running_sum+=vector_a[i]*vector_a[i];
-	return sqrt(running_sum);
-}
+
+
+
