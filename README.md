@@ -29,7 +29,7 @@ catkin build tool_description ur5_tool_description ur5_rcm_msgs ur5_tool_gazebo 
 source devel/setup.bash
 roslaunch ur5_rcm_srvcli ur5_rcm.launch
 ```
-It will launch deployer, Gazebo window with the robot. It should directly go to the definec desired tool position respecting defined RCM.
+It will launch deployer, Gazebo window with the robot, Rviz and dynamic reconfigure (for changing 'xyz_des' and 'xyz_RCM' poses). It should directly go to the defined default desired tool position respecting defined RCM.
 
 
 ### List of packages (ALL LOCATED AT "src/rcm" FOLDER):
