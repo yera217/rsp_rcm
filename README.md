@@ -21,7 +21,6 @@ Lines
 * gfortran (or other fotran compiler)
 `sudo apt-get install gfortran`
 
-* pyKDL
 * packages used in the course assignments (fmauch_universal_robot, Universal_Robots_ROS_Driver, Universal_Robots_Client_Library, ocoros, ros_control, rtt_ros_integration, kdl_typekit) 
 
 ### Simulation running instruction:
