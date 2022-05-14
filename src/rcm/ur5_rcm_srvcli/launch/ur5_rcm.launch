@@ -1,0 +1,16 @@
+ <launch>
+
+  <node pkg="ur5_rcm_srvcli" type="rcm_server.py" name="rcm_server" output="screen"/>
+
+  <include file="$(find ur5_rcm_srvcli)/launch/controller.launch">
+   </include>
+
+   <include file="$(find ur5_tool_gazebo)/launch/ur5_gazebo.launch">
+   </include>
+
+
+
+
+  <!-- <node pkg="rtt_ros" type="deployer" name="ur5_rcm_deployer" args="-s $(find ur5_rcm_srvcli)/scripts/rcm.ops" output="screen"/>
+ -->
+</launch>

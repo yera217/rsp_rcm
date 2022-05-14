@@ -1,0 +1,5 @@
+std_msgs/Float64MultiArray fk
+std_msgs/Float64MultiArray jac_tip
+std_msgs/Float64MultiArray jac_cl
+---
+std_msgs/Float64MultiArray cmd_vel

@@ -1,0 +1,17 @@
+<launch>
+
+  <arg name="tool_name" default="needle_driver"/>
+  <arg name="namespace" default="tool"/>
+  <arg name="parent" default="world"/>
+
+  <include file="$(find tool_description)/launch/tool_upload.launch">
+    <arg name="tool_name" value="$(arg tool_name)"/>
+    <arg name="namespace" value="$(arg namespace)"/>
+    <arg name="parent" value="$(arg parent)"/>
+  </include>
+  
+  <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="tool_joint_pub" ns="$(arg namespace)"/>
+  <node pkg="robot_state_publisher" type="state_publisher" name="tool_state_pub" ns="$(arg namespace)">
+  	<param name="tf_prefix" value="$(arg namespace)"/>
+  </node>
+</launch>

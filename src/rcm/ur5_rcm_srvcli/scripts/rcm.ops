@@ -1,0 +1,20 @@
+import("rtt_ros")
+import("rtt_rosnode")
+import("rtt_std_msgs")
+import("rtt_roscomm")
+import("rtt_rosparam")
+import("rtt_rospack")
+import("rtt_sensor_msgs")
+import("kdl_typekit")
+import("ur5_rcm_srvcli")
+
+loadComponent("ur5", "rtt_rcm_depl")
+setActivity("ur5", 0.01, 0, ORO_SCHED_OTHER)
+
+stream( "ur5.JntStates",ros.topic("/joint_states"))
+stream( "ur5.CmdVels",ros.topic("/joint_group_velocity_controller/command"))
+
+
+
+ur5.configure()
+ur5.start()

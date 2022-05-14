@@ -1,0 +1,22 @@
+<launch>
+
+  <arg name="namespace" default="ur5_tool"/>
+  <arg name="tool_name" default="needle_driver"/>
+
+
+  <group ns="$(arg namespace)">
+    <param name="robot_description"
+           command="$(find xacro)/xacro --inorder '$(find ur5_tool_description)/urdf/ur5_tool.urdf.xacro' "/>
+  </group>
+
+  <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="ur5_joint_pub" ns="$(arg namespace)"/>
+  <node pkg="robot_state_publisher" type="state_publisher" name="ur5_state_pub" ns="$(arg namespace)">
+    <param name="tf_prefix" value="$(arg namespace)"/>
+  </node>
+
+  
+  <node pkg="rviz" type="rviz" name="ur5_tool_rviz"  args="-d $(find ur5_tool_description)/rviz/ur5_tool.rviz" /> 
+
+  
+
+</launch>

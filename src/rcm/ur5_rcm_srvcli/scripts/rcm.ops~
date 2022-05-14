@@ -1,0 +1,18 @@
+import("rtt_ros")
+import("rtt_rosnode")
+import("rtt_roscomm")
+import("rtt_sensor_msgs")
+import("rtt_std_msgs")
+import("kdl_typekit")
+import("ur5_rcm_srvcli")
+
+loadComponent("robot", "rtt_rcm")
+setActivity("robot", 0.01, 0, ORO_SCHED_OTHER)
+
+stream( "robot.JntStates",ros.topic("/iiwa/joint_states"))
+stream( "robot.CmdWrenches",ros.topic("/joint_state_controller/command"))
+
+
+
+robot.configure()
+robot.start()

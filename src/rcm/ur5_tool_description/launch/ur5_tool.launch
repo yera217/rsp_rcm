@@ -1,0 +1,21 @@
+<launch>
+
+  <arg name="namespace" default="ur5_tool"/>
+  <arg name="tool_name" default="needle_driver"/>
+
+
+
+  <param name="robot_description"
+         command="$(find xacro)/xacro --inorder '$(find ur5_tool_description)/urdf/ur5_tool.urdf.xacro' "/>
+
+<!-- 
+<node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="ur5_joint_pub" /> 
+  <node pkg="robot_state_publisher" type="state_publisher" name="ur5_state_pub" >
+    </node>  -->
+
+  
+  <!-- <node pkg="rviz" type="rviz" name="ur5_tool_rviz"  args="-d $(find ur5_tool_description)/rviz/ur5_tool.rviz" />  -->
+
+  
+
+</launch>

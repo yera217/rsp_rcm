@@ -1,0 +1,10 @@
+<launch>
+  <arg name="tool_name" default="needle_driver"/>
+  <arg name="namespace" default="tool"/>
+  <arg name="parent" default="world"/>
+
+  <group ns="$(arg namespace)">
+    <param name="robot_description"
+           command="$(find xacro)/xacro --inorder '$(find tool_description)/urdf/tool.urdf.xacro' tool_name:=$(arg tool_name) parent:=$(arg parent) "/>
+  </group>
+</launch>

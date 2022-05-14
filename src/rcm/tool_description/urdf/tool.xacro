@@ -1,0 +1,53 @@
+<robot name="tool" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="tool" params="tool_name parent">
+    
+    <material name="green">
+      <color rgba="0 0.8 0 0.7"/>
+    </material>
+    <material name="blue">
+      <color rgba="0 0 0.8 0.7"/>
+    </material>
+
+    <!-- <link name="${parent}"/> -->
+
+    <joint name="{tool_name}_joint_0" type="fixed">
+      <parent link="${parent}"/>
+      <child link="${tool_name}_base"/>
+      <origin xyz="0 0 0.025"/>
+    </joint>
+
+    <link name="${tool_name}_base">
+      <visual>
+        <geometry>
+          <box size="0.05 0.05 0.05"/>
+        </geometry>
+        <material name="green"/>
+        <origin rpy="0 0 0.025" xyz="0 0 0"/>
+      </visual>
+    </link>
+
+    <joint name="${tool_name}_joint_1" type="fixed">
+      <parent link="${tool_name}_base"/>
+      <child link="${tool_name}_shaft"/>
+      <origin xyz="0.025 0 0"/>
+    </joint>
+
+    <link name="${tool_name}_shaft">
+      <visual>
+        <geometry>
+          <cylinder radius="0.01" length="0.231"/>
+        </geometry>
+        <material name="blue"/>
+        <origin rpy="0 1.57079632679 0" xyz="0.11505 0 0"/>
+      </visual>
+    </link>
+
+    <joint name="${tool_name}_joint_tip" type="fixed">
+      <parent link="${tool_name}_shaft"/>
+      <child link="${tool_name}_tip"/>
+      <origin xyz="0.231 0 0"/>
+    </joint>
+
+    <link name="${tool_name}_tip"/>
+  </xacro:macro>
+</robot>

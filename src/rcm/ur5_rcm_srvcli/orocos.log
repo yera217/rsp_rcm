@@ -1,0 +1,191 @@
+0.000 [ Info   ][Logger] No ORO_LOGLEVEL environment variable set.
+0.000 [ Info   ][Logger]  OROCOS version '2.9.0' compiled with GCC 7.5.0. Running in GNU/Linux.
+0.000 [ Info   ][Logger] Orocos Logging Activated at level : [ Warning] ( 4 ) 
+0.000 [ Info   ][Logger] Reference System Time is : 59676382926700 ticks ( 59676.4 seconds ).
+0.000 [ Info   ][Logger] Logging is relative to this time.
+0.000 [ Info   ][Logger] RTT_COMPONENT_PATH was set to: /home/yera/rsp_workspace/devel/lib/orocos . Searching in: /home/yera/rsp_workspace/devel/lib/orocos
+0.000 [ Info   ][Logger] plugin 'rtt' not loaded before.
+0.000 [ Info   ][Logger] Loading plugin libraries from directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/./plugins ...
+0.000 [ Info   ][Logger] Loaded RTT Service 'marshalling' from 'rtt-marshalling'
+0.000 [ Info   ][Logger] Loaded RTT Service 'scripting' from 'rtt-scripting'
+0.000 [ Info   ][Logger] typekit 'rtt' not loaded before.
+0.001 [ Info   ][Logger] Loading typekit libraries from directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/./types ...
+0.002 [ Info   ][TypekitRepository::Import] Loading Transport mqueue://rtt-types.
+0.002 [ Info   ][Logger] Loaded RTT TypeKit/Transport 'rtt-mqueue-transport' from 'rtt-transport-mqueue'
+0.022 [ Info   ][TypekitRepository::Import] Loading Typekit rtt-types.
+0.022 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for int
+0.022 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for uint
+0.022 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for llong
+0.022 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for ullong
+0.022 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for double
+0.022 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for float
+0.022 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for char
+0.022 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for bool
+0.022 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for array
+0.022 [ Info   ][Logger] Loaded RTT TypeKit/Transport 'rtt-types' from 'rtt-typekit'
+0.022 [ Info   ][Logger] RTT_COMPONENT_PATH was set to: /home/yera/rsp_workspace/devel/lib/orocos . Searching in: /home/yera/rsp_workspace/devel/lib/orocos
+0.022 [ Info   ][Logger] OCL factory set for real-time logging
+0.022 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='Deployer'
+0.023 [ Info   ][Deployer] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 4095 and period 0 (PID= 12274 ).
+0.023 [ Info   ][Logger] No site file was found. Importing 'ocl' by default.
+0.023 [ Info   ][ComponentLoader::import(path_list)] Importing directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/ocl ...
+0.024 [ Info   ][ComponentLoader::import(path_list)] Loaded multi component library '/home/yera/rsp_workspace/devel/lib/orocos/gnulinux/ocl/liborocos-ocl-logging-gnulinux.so'
+0.026 [ Info   ][ComponentLoader::import(path_list)] Loaded component type 'OCL::logging::Log4cxxAppender'
+0.028 [ Info   ][ComponentLoader::import(path_list)] Loaded multi component library '/home/yera/rsp_workspace/devel/lib/orocos/gnulinux/ocl/liborocos-ocl-timer-gnulinux.so'
+0.032 [ Info   ][ComponentLoader::import(path_list)] Loaded multi component library '/home/yera/rsp_workspace/devel/lib/orocos/gnulinux/ocl/liborocos-ocl-reporting-netcdf-gnulinux.so'
+0.032 [ Info   ][ComponentLoader::import(path_list)] Loaded component type 'OCL::NetcdfReporting'
+0.033 [ Info   ][ComponentLoader::import(path_list)] Loaded component type 'OCL::HelloWorld'
+0.034 [ Info   ][ComponentLoader::import(path_list)] Loaded multi component library '/home/yera/rsp_workspace/devel/lib/orocos/gnulinux/ocl/liborocos-ocl-common-gnulinux.so'
+0.034 [ Info   ][ComponentLoader::import(path_list)] Loaded component type 'OCL::LuaComponent'
+0.034 [ Info   ][ComponentLoader::import(path_list)] Loaded multi component library '/home/yera/rsp_workspace/devel/lib/orocos/gnulinux/ocl/liborocos-ocl-reporting-gnulinux.so'
+0.035 [ Info   ][ComponentLoader::import(path_list)] Loaded component type 'OCL::LuaTLSFComponent'
+0.035 [ Info   ][ComponentLoader::import(path_list)] Loading typekit libraries from directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/ocl/types ...
+0.037 [ Info   ][TypekitRepository::Import] Loading Typekit OCLTypekit.
+0.037 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT TypeKit/Transport 'OCLTypekit' from 'ocl'
+0.037 [ Info   ][ComponentLoader::import(path_list)] Loading plugin libraries from directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/ocl/plugins ...
+0.038 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT Service 'os' from 'os'
+0.039 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT Service 'print' from 'print'
+0.040 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT Service 'LuaTLSF' from 'rttlua-tlsf-plugin'
+0.040 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT Service 'Lua' from 'rttlua-plugin'
+0.040 [ Info   ][Logger] Loading Service or Plugin scripting in TaskContext Deployer
+0.040 [ Info   ][Logger] Found complete interface of requested service 'scripting'
+0.040 [ Info   ][Logger] Running Script /home/yera/rsp_workspace/src/rsp/yzhetpi1/rcm/ur5_rcm_srvcli/scripts/rcm.ops ...
+0.040 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='GlobalEngine'
+0.041 [ Info   ][GlobalEngine] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 4095 and period 0 (PID= 12275 ).
+0.042 [ Info   ][ComponentLoader::import(path_list)] Importing directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/rtt_ros ...
+0.042 [ Info   ][ComponentLoader::import(path_list)] Loading typekit libraries from directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/rtt_ros/types ...
+0.075 [ Info   ][TypekitRepository::Import] Loading Typekit ros-primitives.
+0.075 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT TypeKit/Transport 'ros-primitives' from 'rtt-ros-primitives-typekit'
+0.075 [ Info   ][ComponentLoader::import(path_list)] Loading plugin libraries from directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/rtt_ros/plugins ...
+0.077 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT Plugin 'ros' from 'rtt_ros_service'
+0.077 [ Info   ][ComponentLoader::import(path_list)] Importing directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/rtt_rosnode ...
+0.077 [ Info   ][ComponentLoader::import(path_list)] Loading plugin libraries from directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/rtt_rosnode/plugins ...
+0.083 [ Info   ][ComponentLoader::import(path_list)] Initializing ROS node in Orocos plugin...
+0.087 [ Warning][ComponentLoader::import(path_list)] 'roscore' is not running: no ROS functions will be available.
+0.087 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT Plugin 'rosnode' from 'rtt_rosnode'
+0.087 [ Info   ][ComponentLoader::import(path_list)] Importing directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/rtt_roscomm ...
+0.087 [ Info   ][ComponentLoader::import(path_list)] Loading plugin libraries from directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/rtt_roscomm/plugins ...
+0.091 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT Plugin 'rosservice_registry' from 'rtt_rosservice_registry'
+0.094 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT Service 'rosservice' from 'rtt_rosservice'
+0.097 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT Plugin 'rostopic' from 'rtt_rostopic_service'
+0.097 [ Info   ][ComponentLoader::import(path_list)] Importing directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/rtt_sensor_msgs ...
+0.097 [ Info   ][ComponentLoader::import(path_list)] Loading typekit libraries from directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/rtt_sensor_msgs/types ...
+0.125 [ Info   ][TypekitRepository::Import] Loading Transport ros://ros-sensor_msgs.
+0.125 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT TypeKit/Transport 'rtt-ros-sensor_msgs-transport' from 'rtt-sensor_msgs-ros-transport'
+0.296 [ Info   ][TypekitRepository::Import] Loading Typekit ros-sensor_msgs.
+0.296 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/BatteryState
+0.296 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/CameraInfo
+0.296 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/ChannelFloat32
+0.296 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/CompressedImage
+0.296 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/FluidPressure
+0.296 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/Illuminance
+0.296 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/Image
+0.296 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/Imu
+0.296 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/JointState
+0.296 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/Joy
+0.296 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/JoyFeedback
+0.296 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/JoyFeedbackArray
+0.296 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/LaserEcho
+0.297 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/LaserScan
+0.297 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/MagneticField
+0.297 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/MultiDOFJointState
+0.297 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/MultiEchoLaserScan
+0.297 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/NavSatFix
+0.297 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/NavSatStatus
+0.297 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/PointCloud
+0.297 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/PointCloud2
+0.297 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/PointField
+0.297 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/Range
+0.297 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/RegionOfInterest
+0.297 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/RelativeHumidity
+0.297 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/Temperature
+0.297 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /sensor_msgs/TimeReference
+0.297 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT TypeKit/Transport 'ros-sensor_msgs' from 'rtt-sensor_msgs-typekit'
+0.297 [ Info   ][ComponentLoader::import(path_list)] Loading plugin libraries from directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/rtt_sensor_msgs/plugins ...
+0.301 [ Info   ][ComponentLoader::import(path_list)] Successfully registered ROS service factory for "sensor_msgs/SetCameraInfo".
+0.301 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT Plugin 'rtt_sensor_msgs_ros_service_proxies' from 'rtt_sensor_msgs_rosservice_proxies'
+0.301 [ Info   ][ComponentLoader::import(path_list)] Importing directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/rtt_std_msgs ...
+0.301 [ Info   ][ComponentLoader::import(path_list)] Loading typekit libraries from directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/rtt_std_msgs/types ...
+0.337 [ Info   ][TypekitRepository::Import] Loading Transport ros://ros-std_msgs.
+0.337 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT TypeKit/Transport 'rtt-ros-std_msgs-transport' from 'rtt-std_msgs-ros-transport'
+0.539 [ Info   ][TypekitRepository::Import] Loading Typekit ros-std_msgs.
+0.539 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/Bool
+0.539 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/Byte
+0.539 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/ByteMultiArray
+0.539 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/Char
+0.539 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/ColorRGBA
+0.539 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/Duration
+0.539 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/Empty
+0.539 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/Float32
+0.539 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/Float32MultiArray
+0.540 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/Float64
+0.540 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/Float64MultiArray
+0.540 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/Header
+0.540 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/Int16
+0.540 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/Int16MultiArray
+0.540 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/Int32
+0.540 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/Int32MultiArray
+0.540 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/Int64
+0.540 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/Int64MultiArray
+0.540 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/Int8
+0.540 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/Int8MultiArray
+0.540 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/MultiArrayDimension
+0.540 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/MultiArrayLayout
+0.540 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/String
+0.540 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/Time
+0.541 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/UInt16
+0.541 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/UInt16MultiArray
+0.541 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/UInt32
+0.541 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/UInt32MultiArray
+0.541 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/UInt64
+0.541 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/UInt64MultiArray
+0.541 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/UInt8
+0.541 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for /std_msgs/UInt8MultiArray
+0.541 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT TypeKit/Transport 'ros-std_msgs' from 'rtt-std_msgs-typekit'
+0.541 [ Info   ][ComponentLoader::import(path_list)] Loading plugin libraries from directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/rtt_std_msgs/plugins ...
+0.557 [ Info   ][TypekitRepository::Import] Loading Transport ros://ros-primitives.
+0.557 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for array
+0.557 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for bool
+0.557 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for duration
+0.557 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for float32
+0.557 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for float64
+0.557 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for int16
+0.557 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for int32
+0.557 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for int64
+0.557 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for int8
+0.557 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for rt_string
+0.557 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for string
+0.557 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for time
+0.557 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for uint16
+0.557 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for uint32
+0.557 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for uint64
+0.557 [ Info   ][TypekitRepository::Import] Registered new 'ros' transport for uint8
+0.557 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT Plugin 'rtt-ros-primitives-transport' from 'rtt-ros-primitives-transport'
+0.558 [ Info   ][ComponentLoader::import(path_list)] Importing directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/kdl_typekit ...
+0.558 [ Info   ][ComponentLoader::import(path_list)] Loading typekit libraries from directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/kdl_typekit/types ...
+0.677 [ Info   ][TypekitRepository::Import] Loading Typekit KDL.
+0.678 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT TypeKit/Transport 'KDL' from 'kdl_typekit'
+0.681 [ Info   ][TypekitRepository::Import] Loading Transport mqueue://KDL.
+0.681 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for KDL.Frame
+0.681 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for KDL.Jacobian
+0.681 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for KDL.JntArray
+0.681 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for KDL.Rotation
+0.681 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for KDL.Twist
+0.681 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for KDL.Vector
+0.681 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for KDL.Wrench
+0.681 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT TypeKit/Transport 'kdl-mqueue-types' from 'kdl-transport-mqueue'
+0.681 [ Info   ][ComponentLoader::import(path_list)] Importing directory /home/yera/rsp_workspace/devel/lib/orocos/gnulinux/ur5_rcm_srvcli ...
+0.697 [ Info   ][ComponentLoader::import(path_list)] Loaded component type 'rtt_rcm_depl'
+0.709 [ Info   ][ComponentLoader::import(path_list)] Loaded component type 'rtt_rcm'
+0.709 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='robot'
+0.710 [ Info   ][robot] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 4095 and period 0 (PID= 12276 ).
+6.715 [ Info   ][loadComponent] Adding robot as new peer:  OK.
+6.715 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=0, CPU affinity=4294967295, with name='robot'
+6.715 [ Info   ][robot] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 4095 and period 0.01 (PID= 12508 ).
+6.719 [ Info   ][ScriptingService] Created input stream for input port JntStates
+6.720 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='RosPublishActivity'
+6.720 [ Info   ][RosPublishActivity] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 4095 and period 0 (PID= 12510 ).
+6.720 [ Info   ][ScriptingService] Created output stream for output port CmdVels
+6.722 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='TaskBrowser'
+6.722 [ Info   ][TaskBrowser] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 4095 and period 0 (PID= 12511 ).
+6.722 [ Info   ][Logger] Entering Task Deployer

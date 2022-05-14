@@ -1,0 +1,19 @@
+<robot name="ur5_tool" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find tool_description)/urdf/tool.xacro"/>
+  <xacro:include filename="$(find ur_description)/urdf/inc/ur5_macro.xacro"/>
+  <xacro:include filename="$(find ur5_tool_description)/urdf/common.gazebo.xacro" />
+
+  <xacro:arg name="tool_name" default="needle_driver"/>
+  <xacro:arg name="parent" default="tool0"/>
+
+  <link name="world"></link>                                                                                      
+  <joint name="joint_world" type="fixed">
+    <parent link="world" />
+    <child link="base_link" />
+  </joint>
+
+  <xacro:ur5_robot prefix="" transmission_hw_interface="hardware_interface/VelocityJointInterface"/>
+  <xacro:tool tool_name="$(arg tool_name)" parent="$(arg parent)" />
+  
+</robot>

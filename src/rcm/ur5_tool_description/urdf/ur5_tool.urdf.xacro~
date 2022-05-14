@@ -1,0 +1,12 @@
+<robot name="ur5_tool" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find tool_description)/urdf/tool.xacro"/>
+  <xacro:include filename="$(find ur_description)/urdf/inc/ur5_macro.xacro"/>
+
+  <xacro:arg name="tool_name" default="needle_driver"/>
+  <xacro:arg name="parent" default="tool0"/>
+
+  <xacro:ur5_robot prefix="" />
+  <xacro:tool tool_name="$(arg tool_name)" parent="$(arg parent)" />
+  
+</robot>
