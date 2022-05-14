@@ -19,11 +19,19 @@ Lines
 * gfortran (or other fotran compiler)
 `sudo apt-get install gfortran`
 
+* Ocoros RTT and UR5 packages used in the course assignemtns (are included here also)
 
 
-
-
-
-
-### 
+### List of packages (ALL LOCATED AT "src/rcm" FOLDER):
+* tool_description - xacro description of the tool
+* ur5_tool_description - xacro file merging UR5 official description with the tool description
+* ur5_rcm_msgs - service message for RCM calculations 
+  * Inputs:
+    * 1) 6x1 array of xyz_tip and xyz_cl (closest to RCM point on the shaft)
+    * 2) Flattened array (3x6 => 18x1) of the Manipulator Jacobian evaluated at the tool tip "xyz_tip or x_curr"
+    * 3) Flattened array (3x6 => 18x1) of the Manipulator Jacobian evaluated at "xyz_cl" the point on the shaft closest to the RCM 
+  * Outputs: 
+    * 1) 6x1 array of joint velocity commands
+*  ur5_tool_gazebo - package for gazebo configuration of the UR5 + tool
+*  ur5_rcm_srvcli - MAIN package which implements RCM optimization server, RTT deployer logic, constructs KDL chain from robot_description, controller config files
 
