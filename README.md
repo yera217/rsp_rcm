@@ -19,7 +19,7 @@ Lines
 * gfortran (or other fotran compiler)
 `sudo apt-get install gfortran`
 
-* pyKDL and Ocoros packages, UR5 packages used in the course assignemtns (are included here also)
+* pyKDL and packages used in the course assignments (Ocoros RTT, KDL, UR5, ros_control, kdl_typekit) 
 
 ### Simulation running instruction:
 ```
